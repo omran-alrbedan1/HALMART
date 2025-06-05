@@ -167,7 +167,9 @@ const HomePage = () => {
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center overflow-hidden">
-                    <img
+                    <Image
+                      height={32}
+                      width={32}
                       src={product.image}
                       alt={product.name}
                       className="w-15 h-15 object-cover"

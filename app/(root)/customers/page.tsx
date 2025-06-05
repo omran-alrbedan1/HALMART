@@ -1,8 +1,5 @@
-import React from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Search, Filter, Plus, Users, Download, Wallet } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import CounterpartiesTable from "@/components/tables/SuppliersTable";
 import { Button } from "antd";
 import Image from "next/image";
 import { icons } from "@/constants/icons";

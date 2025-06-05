@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Card,
   CardHeader,
@@ -11,30 +11,14 @@ import { Button } from "antd";
 import {
   Search,
   Filter,
-  Calendar,
   FileText,
-  Clock,
-  AlertCircle,
-  ArrowUpRight,
-  ArrowDownRight,
-  MoreHorizontal,
   CalendarDays,
-  CircleDollarSign,
-  TrendingUp,
-  TrendingDown,
-  Receipt,
-  AlertTriangle,
   Award,
-  Star,
   Plus,
   Download,
-  ArrowUp,
-  ArrowDown,
   Coins,
   CalendarDaysIcon,
 } from "lucide-react";
-import { Table } from "antd";
-import type { ColumnsType } from "antd/es/table";
 import { TransactionsTable } from "@/components/tables/PaymentTable";
 import Image from "next/image";
 import { icons } from "@/constants/icons";
@@ -141,7 +125,7 @@ const Transactions = () => {
           />
         </div>
         <div>
-          <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-300">
+          <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-300  ">
             {" "}
             المعاملات
           </h1>
