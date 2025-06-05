@@ -4,22 +4,12 @@ import "./globals.css";
 
 import { AppSidebar } from "@/components/app-sidebar";
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
-import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Providers } from "@/components/providers/ThemeProvider";
 import { ThemeToggle } from "@/components/toggles/theme-toggle";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BellIcon, SearchIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";

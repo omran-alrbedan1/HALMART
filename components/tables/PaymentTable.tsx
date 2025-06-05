@@ -162,8 +162,8 @@ export function TransactionsTable({
   ];
 
   const itemRender = (
-    _: any,
-    type: string,
+    _: number | undefined,
+    type: "page" | "prev" | "next" | "jump-prev" | "jump-next",
     originalElement: React.ReactNode
   ) => {
     if (type === "prev") {

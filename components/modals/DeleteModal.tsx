@@ -1,6 +1,5 @@
 import { Button, Modal, Space, Typography } from "antd";
 import { ExclamationCircleFilled, DeleteOutlined } from "@ant-design/icons";
-import { Loader2 } from "lucide-react";
 
 const DeleteModal = ({
   open,

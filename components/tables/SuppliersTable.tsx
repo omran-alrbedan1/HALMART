@@ -15,10 +15,6 @@ const handleEditSupplier = (record: Supplier) => {
   console.log("Edit supplier:", record);
 };
 
-const handleExportSupplier = (record: Supplier) => {
-  console.log("Export supplier:", record);
-};
-
 const handleDeleteSupplier = (record: Supplier) => {
   console.log("Delete supplier:", record);
 };

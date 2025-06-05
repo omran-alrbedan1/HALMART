@@ -1,23 +1,9 @@
 "use client";
 
-import {
-  User,
-  Phone,
-  MapPin,
-  ShoppingBag,
-  CreditCard,
-  Star,
-} from "lucide-react";
+import { User, Phone, MapPin, ShoppingBag } from "lucide-react";
 import type { ColumnsType } from "antd/es/table";
-import { Table, Tag, Button, Dropdown, Badge } from "antd";
-import {
-  Eye,
-  Edit,
-  Trash2,
-  MoreHorizontal,
-  ShoppingCart,
-  History,
-} from "lucide-react";
+import { Table, Tag, Button, Dropdown } from "antd";
+import { Eye, Edit, Trash2, MoreHorizontal, ShoppingCart } from "lucide-react";
 
 interface Customer {
   key: string;

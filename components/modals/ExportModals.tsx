@@ -1,6 +1,6 @@
 "use client";
 import { Modal } from "antd";
-import React, { useState } from "react";
+import { useState } from "react";
 import { z } from "zod";
 import {
   Form,
@@ -51,7 +51,7 @@ const ExportModal = ({ isModalOpen, setIsModalOpen }: Props) => {
     setIsModalOpen(false);
   };
 
-  const onSubmit = async (values: FormValues) => {
+  const onSubmit = async () => {
     setIsSubmitting(true);
     try {
       // await exportExam({
