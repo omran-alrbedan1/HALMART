@@ -1,18 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-import { AppSidebar } from "@/components/app-sidebar";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
-import { Providers } from "@/components/providers/ThemeProvider";
-import { ThemeToggle } from "@/components/toggles/theme-toggle";
-import { Button } from "@/components/ui/button";
-import { BellIcon, SearchIcon } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,46 +20,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="rtl">
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  overflow-x-clip`}
       >
-        <Providers>
-          <SidebarProvider className="">
-            <AppSidebar />
-            <SidebarInset className="">
-              <header className="flex bg-sidebar h-14 fixed justify-between  dark:bg-[#171717]     items-center z-50 shadow-xs border-b  border min-w-screen  shrink-0  gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
-                <SidebarTrigger className="md:hidden mx-4" />
-                <div className=" md:flex   px-4">
-                  <div className="relative  w-md">
-                    <SearchIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-                    <Input
-                      type="search"
-                      placeholder="ابحث عن خضار..."
-                      className="pr-10 pl-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2 md:ml-80 ml-8">
-                  <ThemeToggle />
-
-                  <Button variant="ghost" size="icon" className="relative">
-                    <BellIcon className="h-5 w-5" />
-                    <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500"></span>
-                  </Button>
-                </div>
-              </header>
-              <div className="mt-16">{children}</div>
-            </SidebarInset>
-          </SidebarProvider>
-        </Providers>
+        {children}
       </body>
     </html>
   );
