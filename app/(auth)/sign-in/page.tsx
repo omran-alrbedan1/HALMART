@@ -3,7 +3,6 @@ import LoginForm from "@/components/forms/LoginForm";
 import { images } from "@/constants/images";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Mail, Lock } from "lucide-react";
 
 export default function LoginPage() {
   return (
