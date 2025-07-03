@@ -20,6 +20,10 @@ import activePackages from "@/public/icons/active-packages.svg";
 import activeHome from "@/public/icons/active-home.svg";
 import activePayments from "@/public/icons/active-payment.svg";
 import activeSuppliers from "@/public/icons/active-suppliers.svg";
+import building from "@/public/icons/building.svg";
+import activeBuilding from "@/public/icons/activeBuilding.svg";
+import company from "@/public/icons/company.svg";
+import store from "@/public/icons/store.svg";
 
 export const icons = {
   payments,
@@ -34,6 +38,9 @@ export const icons = {
   truck,
   suppliers,
   customers,
+  building,
+  company,
+  store,
 };
 
 export const activeIcons = {
@@ -45,4 +52,5 @@ export const activeIcons = {
   activeHome,
   activePayments,
   activeSuppliers,
+  activeBuilding,
 };

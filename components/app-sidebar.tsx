@@ -17,55 +17,35 @@ import Image from "next/image";
 import { images } from "@/constants/images";
 import { useTheme } from "next-themes";
 
-const data = {
-  user: {
-    name: "Omran Alrbedan",
-    email: "Omran@example.com",
-    avatar: "/images/HAL MART.png",
-  },
+type Role = "admin" | "manager" | "user";
 
-  navItems: [
+interface NavItem {
+  name: string;
+  url: string;
+  icon: string;
+  activeIcon: string;
+}
+
+interface UserData {
+  name: string;
+  email: string;
+  avatar: string;
+  role: Role;
+}
+
+const roleBasedNavItems: Record<Role, NavItem[]> = {
+  admin: [
     {
-      name: "الرئيسية",
-      url: "/home",
-      icon: icons.home,
-      activeIcon: activeIcons.activeHome,
+      name: "الشركات",
+      url: "/admin/companies",
+      icon: icons.building,
+      activeIcon: activeIcons.activeBuilding,
     },
     {
-      name: "المعاملات",
-      url: "/payments",
-      icon: icons.payments,
-      activeIcon: activeIcons.activePayments,
-    },
-    {
-      name: "الموردون",
-      url: "/suppliers",
-      icon: icons.suppliers,
-      activeIcon: activeIcons.activeSuppliers,
-    },
-    {
-      name: "الزبائن",
-      url: "/customers",
+      name: "المستخدمين",
+      url: "/users",
       icon: icons.users,
       activeIcon: activeIcons.activeUsers,
-    },
-    {
-      name: "سجل الإجراءات",
-      url: "/history",
-      icon: icons.clock,
-      activeIcon: activeIcons.activeClock,
-    },
-    {
-      name: "المنتجات",
-      url: "/products",
-      icon: icons.packages,
-      activeIcon: activeIcons.activePackages,
-    },
-    {
-      name: "التقارير",
-      url: "/reports",
-      icon: icons.pieChart,
-      activeIcon: activeIcons.activePieChart,
     },
     {
       name: "الإعدادات",
@@ -74,19 +54,45 @@ const data = {
       activeIcon: activeIcons.activeSettings,
     },
   ],
+  manager: [
+    {
+      name: "التقارير",
+      url: "/reports",
+      icon: icons.pieChart,
+      activeIcon: activeIcons.activePieChart,
+    },
+  ],
+  user: [
+    {
+      name: "الرئيسية",
+      url: "/home",
+      icon: icons.home,
+      activeIcon: activeIcons.activeHome,
+    },
+  ],
+};
+
+const data = {
+  user: {
+    name: "Omran Alrbedan",
+    email: "Omran@example.com",
+    avatar: "/images/HAL MART.png",
+    role: "admin" as Role,
+  },
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
-  const { theme } = useTheme(); // Get current theme
+  const { theme } = useTheme();
 
-  const navItemsWithActiveState = data.navItems.map((item) => ({
+  const navItemsForCurrentRole = roleBasedNavItems[data.user.role];
+
+  const navItemsWithActiveState = navItemsForCurrentRole.map((item) => ({
     ...item,
     isActive: pathname === item.url,
     icon: pathname === item.url ? item.activeIcon : item.icon,
   }));
 
-  // Choose logo based on theme
   const logo = theme === "dark" ? images.logo2 : images.logo;
 
   return (
